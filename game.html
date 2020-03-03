@@ -1,0 +1,55 @@
+<script>
+
+    let pScore = 0;
+    let cScore = 0;
+
+    const compareHands = (playerChoice, computerChoice) => {
+
+        var playerChoice = prompt("Rock, Paper or Scissors?" + ' Player: ' + pScore + ' Computer: ' + cScore);
+        playerChoice.toUpperCase;
+        computerChoice = Math.floor(Math.random() * 3) + 1;
+
+        if (computerChoice === 1) {
+            if (playerChoice === 'SCISSORS') {
+                cScore++;
+            } else {
+                pScore++;
+            }
+        }
+
+        if (computerChoice === 2) {
+            if (playerChoice === 'ROCK') {
+                pScore++;
+            } else {
+                cScore++;
+            }
+        }
+
+        if (computerChoice === 3) {
+            if (playerChoice === 'PAPER') {
+                pScore++;
+            } else {
+                cScore++;
+            }
+        }
+
+    }
+
+    while (true) {
+        compareHands();
+        if (pScore === 5) {
+            prompt('Congratulations, you win! (Press enter to play again)');
+            pScore = 0;
+            cScore = 0;
+            continue;
+        }
+        else if (cScore === 5) {
+            prompt('Aw, better luck next time! (Press enter to play again)');
+            cScore = 0;
+            pScore = 0;
+            continue;
+        } else {
+            continue;
+        }
+    }
+</script>
